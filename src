@@ -1,0 +1,79 @@
+create database Escola;
+use Escola;
+
+create table Estudantes (
+id_Estudante int auto_increment primary key,
+nome varchar(100) not null,
+data_nascimento date not null,
+nome_turma varchar(50) not null
+);
+
+create table Professores (
+id_Professor int auto_increment primary key,
+nome varchar(100) not null,
+disciplina varchar(50) not null
+);
+
+create table Turmas (
+id_Turma int auto_increment primary key,
+nome_turma varchar(50) not null,
+id_Professor int,
+foreign key (id_Professor) references Professores(id_Professor)
+);
+
+create table Notas (
+id_Nota int auto_increment primary key,
+id_Estudante int, 
+id_Turma int,
+nota decimal(4, 2) not null,
+foreign key (id_Estudante) references Estudantes(id_Estudante),
+foreign key (id_Turma) references Turmas(id_Turma)
+);
+
+insert into Turmas (nome_Turma) values
+('101'),
+('102'),
+('103'),
+('104');
+
+insert into Professores (nome, disciplina) values
+('Luana', 'História'),
+('Andressa', 'Português'),
+('Letícia', 'Matemática'),
+('Rodrigo', 'Educação Física'),
+('Marianna', 'Artes Visuais'),
+('Willian', 'Física');
+
+insert into Estudantes (nome, data_nascimento, nome_turma) values 
+('Isabela', '2008-09-25', '103'),
+('Isadora', '2008-09-25', '103'),
+('Angelina', '2008-12-15', '103'),
+('Lucas', '2008-09-28', '103'),
+('Yasmin', '2008-08-21', '103'),
+('Pedro', '2007-12-19', '102'),
+('Ally', '2008-07-14', '102'),
+('Caio', '2008-05-22', '102'),
+('Kaua', '2008-03-09', '102'),
+('Marina', '2007-12-30', '102'),
+('Paulo', '2008-02-20', '101'),
+('Mariana', '2008-07-26', '101'),
+('Clarencio', '2007-04-12', '101'),
+('Evangeline', '2008-07-21', '101'),
+('Marcelo', '2008-02-04', '101');
+
+insert into notas (nota) values
+('0.0'),
+('3.0'),
+('5.0'),
+('6.0'),
+('6.0'),
+('7.5'),
+('7.5'),
+('7.5'),
+('8.5'),
+('8.5'),
+('8.5'),
+('8.5'),
+('9.0'),
+('10.0'),
+('10.0');
