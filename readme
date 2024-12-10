@@ -1,0 +1,75 @@
+O objetivo deste projeto é desenvolver um sistema de gerenciamento escolar que permita o registro e a consulta de informações sobre estudantes, professores, turmas e suas respectivas notas. O sistema deve ser baseado em um banco de dados relacional e incluir funcionalidades para armazenar e manipular dados relevantes para uma instituição de ensino. As principais entidades envolvidas no sistema são Estudantes, Professores, Turmas e Notas.
+
+Estrutura do Projeto
+
+O banco de dados foi projetado com as seguintes tabelas principais:
+
+Estudantes: Contém informações pessoais dos alunos e a turma a qual pertencem.
+
+Professores: Armazena os nomes dos professores e as disciplinas que ministram.
+
+Turmas: Define as turmas existentes na escola, associando cada uma a um professor responsável.
+
+Notas: Registra as notas obtidas pelos estudantes em diferentes turmas.
+
+README
+
+Projeto: Sistema de Gerenciamento Escolar
+
+Descrição
+
+Este projeto implementa um sistema de gerenciamento escolar utilizando MySQL para criar, organizar e gerenciar informações relacionadas a estudantes, professores, turmas e suas respectivas notas.
+
+Requisitos
+
+MySQL 8.0 ou superior
+
+Um cliente MySQL (MySQL Workbench ou terminal)
+
+Estrutura do Banco de Dados
+
+Estudantes:
+
+id_Estudante: Identificador único do estudante (PRIMARY KEY).
+
+nome: Nome completo do estudante.
+
+data_nascimento: Data de nascimento do estudante.
+
+nome_turma: Nome da turma em que o estudante está matriculado.
+
+Professores:
+
+id_Professor: Identificador único do professor (PRIMARY KEY).
+
+nome: Nome completo do professor.
+
+disciplina: Disciplina ministrada pelo professor.
+
+Turmas:
+
+id_Turma: Identificador único da turma (PRIMARY KEY).
+
+nome_turma: Nome da turma.
+
+id_Professor: Relacionamento com a tabela Professores (FOREIGN KEY).
+
+Notas:
+
+id_Nota: Identificador único da nota (PRIMARY KEY).
+
+id_Estudante: Relacionamento com a tabela Estudantes (FOREIGN KEY).
+
+id_Turma: Relacionamento com a tabela Turmas (FOREIGN KEY).
+
+nota: Nota obtida pelo estudante.
+
+Passos para Execução
+
+Clone este repositório:
+
+git clone <url_do_repositorio>
+
+Acesse o arquivo script.sql e execute-o em um cliente MySQL para criar o banco de dados e tabelas, e popular com os dados iniciais.
+
+Utilize comandos SQL para consultar e manipular os dados conforme necessário.
