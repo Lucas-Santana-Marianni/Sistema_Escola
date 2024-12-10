@@ -1,0 +1,19 @@
+# Arquivos e pastas temporários
+*.tmp
+*.temp
+*.swp
+
+# Arquivos de logs
+*.log
+
+# Arquivos específicos do sistema
+.DS_Store
+Thumbs.db
+
+# Dados sensíveis
+.env
+config.json
+
+# Backups
+*.bak
+*.sql~
